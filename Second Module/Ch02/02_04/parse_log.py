@@ -3,13 +3,15 @@ import bz2
 import logging
 import re
 from datetime import datetime
+import os
 
+os.chdir("C:\\Users\\kevin\\OneDrive\\Documents\\LinkedIn Learning\\Python for Data Science\\Second Module\\Ch02\\02_04")
 
-def parse_line(line):
+def parse_line(line): # Receives a log line
     # Example:
     # Ride of 1 passenger started at 2018-10-31T07:10:55 and paid $20.54
     match = re.search(
-        r'(\d+) pass.*started at ([^ ]+).*paid \$(\d+\.\d+)',
+        r'(\d+) pass.*started at ([^ ]+).*paid \$(\d+\.\d+)', # Regular expression
         line)
     if not match:
         return None
